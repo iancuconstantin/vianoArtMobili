@@ -2108,7 +2108,7 @@ div#mCSB_1_container{
 .about-section .image-box:before{
   position: absolute;
   content: '';
-  background-image: url(../images/shape/shape-8.png);
+  background-image: url(../images/shape/shape-8.png
   width: 620px;
   height: 786px;
   left: 40px;
