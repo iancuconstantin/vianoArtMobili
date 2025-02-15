@@ -748,6 +748,29 @@
 	}
 
     
+	/*	=========================================================================
+	Lazy loading
+	========================================================================== */
+
+	// Creăm observer-ul
+	const observer = new IntersectionObserver((entries, observer) => {
+		entries.forEach(entry => {
+		if (entry.isIntersecting) {
+			// Când div-ul este vizibil, încarcă imaginea de fundal
+			const bgImage = entry.target.getAttribute('data-bg'); // Preluăm URL-ul din data-bg
+			entry.target.style.backgroundImage = `url(${bgImage})`; // Setăm imaginea de fundal
+
+			// Oprim observarea după ce imaginea a fost încărcată
+			observer.unobserve(entry.target);
+		}
+		});
+	}, { threshold: 0.1 }); // Se declanșează când 10% din element este vizibil
+	
+	// Aplicăm observer-ul pe div-ul cu imaginea de fundal
+	const bgLayer = document.querySelector('.bg-layer');
+	observer.observe(bgLayer);
+
+
 
 	/*	=========================================================================
 	When document is Scrollig, do
