@@ -53,7 +53,9 @@
 				observer.unobserve(entry.target);
 			}
 		});
-	}, { threshold: 0.1 }); // Se declanșează când 10% din element este vizibil
+	}, { threshold: 0, // Se declanșează imediat ce elementul intră în viewport
+		rootMargin: '100px' // Îl detectează cu 100px înainte să fie vizibil pe ecran 
+	});
 
 	// Aplicăm observer-ul pe toate elementele cu clasa .bg-layer
 	const bgLayers = document.querySelectorAll('.bg-layer');
