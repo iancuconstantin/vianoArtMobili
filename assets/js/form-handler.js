@@ -1,24 +1,3 @@
-// document.addEventListener("DOMContentLoaded", function () {
-//     const handleSubmit = event => {
-//       event.preventDefault(); // Prevent default form submission
-  
-//       const myForm = event.target;
-//       const formData = new FormData(myForm);
-
-//       console.log("verificare: ", formData);
-  
-//       fetch("/", {
-//         method: "POST",
-//         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-//         body: new URLSearchParams(formData).toString()
-//       })
-//         .then(() => alert("Mulțumim! Mesajul a fost trimis cu succes."))
-//         .catch(error => alert("Eroare la trimiterea formularului: " + error));
-//     };
-  
-//     document.querySelector("#contact-form").addEventListener("submit", handleSubmit);
-//   });
-
 document.querySelector("#newsletter-form").addEventListener("submit", function(event) {
   event.preventDefault();
   const form = event.target;
