@@ -734,12 +734,17 @@
                                     <h3>Newsletter</h3>
                                 </div>
                                 <div class="widget-content">
-                                    <form action="contact.html" method="post">
+                                    <form name="newsletter" method="post" data-netlify="true" id="newsletter-form">
                                         <div class="form-group">
                                             <input type="email" name="email" placeholder="Email" required="">
                                             <button type="submit">Trimite</button>
                                         </div>
                                     </form>
+                                    <!-- Div pentru afișarea mesajului (bulina de dialog) -->
+                                    <div id="form-message" style="display: none;"></div>
+
+
+
                                     <ul class="social-links clearfix">
                                         <li><h4>Social Media :</h4></li>
                                         <li><a href="https://www.facebook.com/profile.php?id=100042064516905" target="_blank"><i class="icon-3"></i></a></li>
@@ -804,6 +809,9 @@
 
     </div>
 
+
+    <!-- Link to the external JavaScript file -->
+    <script src="assets/js/form-handler.js"></script>
 
     <!-- jequery plugins -->
     <script src="assets/js/jquery.js"></script>
