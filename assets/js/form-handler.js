@@ -20,7 +20,7 @@
 //   });
 
 document.querySelector("#newsletter-form").addEventListener("submit", function(event) {
-  event.preventDefault(); // Previne reîncărcarea paginii
+  event.preventDefault();
   const form = event.target;
   const formData = new FormData(form);
   const messageDiv = document.querySelector("#form-message");
@@ -30,25 +30,25 @@ document.querySelector("#newsletter-form").addEventListener("submit", function(e
       body: formData,
   })
   .then(() => {
-      messageDiv.textContent = "Formular trimis cu succes!"; // Mesaj de succes
-      messageDiv.style.backgroundColor = "#2d8d9d"; // Fundal verde (culoare Netlify)
-      messageDiv.style.color = "#fff"; // Text alb
-      messageDiv.style.display = "block"; // Afișează div-ul
-      // După 3 secunde, ascunde mesajul
+      messageDiv.textContent = "Formular trimis cu succes!";
+      messageDiv.style.backgroundColor = "#B19777";
+      messageDiv.style.color = "#fff";
+      messageDiv.style.display = "block";
+      
       setTimeout(function() {
-        messageDiv.style.display = "none"; // Ascunde div-ul
-    }, 3000); // 3000 ms = 3 secunde
+        messageDiv.style.display = "none";
+    }, 3000);
 
-    form.reset(); // Resetează formularul
+    form.reset();
   })
   .catch((error) => {
-      messageDiv.textContent = "Eroare la trimitere. Încearcă din nou."; // Mesaj de eroare
-      messageDiv.style.backgroundColor = "#f44336"; // Fundal roșu pentru eroare
-      messageDiv.style.color = "#fff"; // Text alb
-      messageDiv.style.display = "block"; // Afișează div-ul
-      // După 3 secunde, ascunde mesajul
+      messageDiv.textContent = "Eroare la trimitere. Încearcă din nou.";
+      messageDiv.style.backgroundColor = "#f44336";
+      messageDiv.style.color = "#fff";
+      messageDiv.style.display = "block";
+      
       setTimeout(function() {
-        messageDiv.style.display = "none"; // Ascunde div-ul
-    }, 3000); // 3000 ms = 3 secunde
+        messageDiv.style.display = "none";
+    }, 3000);
   });
 });
