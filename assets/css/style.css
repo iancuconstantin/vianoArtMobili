@@ -5570,8 +5570,10 @@ body.out .mouse-pointer {
 /** error-section **/
 
 .error-section{
-  position: relative;
-  padding: 350px 0px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .error-section .bg-layer{
